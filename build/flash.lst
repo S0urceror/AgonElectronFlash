@@ -1,0 +1,742 @@
+    1 00:0000 -  -  -  -          #include "includes/ez80f92.inc"
+Listing for file "/Users/mario/Development/AgonLight/software/AgonElectronFlash/includes/ez80f92.inc"
+    1 00:0000 -  -  -  -  ;************************************************************************
+    2 00:0000 -  -  -  -  ;*    eZ80F92.inc
+    3 00:0000 -  -  -  -  ;*
+    4 00:0000 -  -  -  -  ;*		eZ80F92 Registers
+    5 00:0000 -  -  -  -  ;*
+    6 00:0000 -  -  -  -  ;************************************************************************
+    7 00:0000 -  -  -  -  ;* Start eZ80F92 Include file
+    8 00:0000 -  -  -  -  
+    9 00:0000 -  -  -  -  ;* TIMER registers
+   10 00:0000 -  -  -  -  
+   11 00:0000 -  -  -  -  TMR0_CTL:	.equ 80h
+   12 00:0000 -  -  -  -  TMR0_DR_L:	.equ 81h
+   13 00:0000 -  -  -  -  TMR0_RR_L:	.equ 81h
+   14 00:0000 -  -  -  -  TMR0_DR_H:	.equ 82h
+   15 00:0000 -  -  -  -  TMR0_RR_H:	.equ 82h
+   16 00:0000 -  -  -  -  TMR1_CTL:	.equ 83h
+   17 00:0000 -  -  -  -  TMR1_DR_L:	.equ 84h
+   18 00:0000 -  -  -  -  TMR1_RR_L:	.equ 84h
+   19 00:0000 -  -  -  -  TMR1_DR_H:	.equ 85h
+   20 00:0000 -  -  -  -  TMR1_RR_H:	.equ 85h
+   21 00:0000 -  -  -  -  TMR2_CTL:	.equ 86h
+   22 00:0000 -  -  -  -  TMR2_DR_L:	.equ 87h
+   23 00:0000 -  -  -  -  TMR2_RR_L:	.equ 87h
+   24 00:0000 -  -  -  -  TMR2_DR_H:	.equ 88h
+   25 00:0000 -  -  -  -  TMR2_RR_H:	.equ 88h
+   26 00:0000 -  -  -  -  TMR3_CTL:	.equ 89h
+   27 00:0000 -  -  -  -  TMR3_DR_L:	.equ 8ah
+   28 00:0000 -  -  -  -  TMR3_RR_L:	.equ 8ah
+   29 00:0000 -  -  -  -  TMR3_DR_H:	.equ 8bh
+   30 00:0000 -  -  -  -  TMR3_RR_H:	.equ 8bh
+   31 00:0000 -  -  -  -  TMR4_CTL:	.equ 8ch
+   32 00:0000 -  -  -  -  TMR4_DR_L:	.equ 8dh
+   33 00:0000 -  -  -  -  TMR4_RR_L:	.equ 8dh
+   34 00:0000 -  -  -  -  TMR4_DR_H:	.equ 8eh
+   35 00:0000 -  -  -  -  TMR4_RR_H:	.equ 8eh
+   36 00:0000 -  -  -  -  TMR5_CTL:	.equ 8fh
+   37 00:0000 -  -  -  -  TMR5_DR_L:	.equ 90h
+   38 00:0000 -  -  -  -  TMR5_RR_L:	.equ 90h
+   39 00:0000 -  -  -  -  TMR5_DR_H:	.equ 91h
+   40 00:0000 -  -  -  -  TMR5_RR_H:	.equ 91h
+   41 00:0000 -  -  -  -  TMR_ISS:	.equ 92h
+   42 00:0000 -  -  -  -  
+   43 00:0000 -  -  -  -  ;* WDT Registers
+   44 00:0000 -  -  -  -  
+   45 00:0000 -  -  -  -  WDT_CTL:	.equ 93h
+   46 00:0000 -  -  -  -  WDT_RR:	.equ 94h
+   47 00:0000 -  -  -  -  
+   48 00:0000 -  -  -  -  
+   49 00:0000 -  -  -  -  ;* PORT Registers
+   50 00:0000 -  -  -  -  
+   51 00:0000 -  -  -  -  PB_DR:		.equ 09Ah
+   52 00:0000 -  -  -  -  PB_DDR:		.equ 09Bh
+   53 00:0000 -  -  -  -  PB_ALT1:	.equ 09Ch
+   54 00:0000 -  -  -  -  PB_ALT2:	.equ 09Dh
+   55 00:0000 -  -  -  -  PC_DR:		.equ 09Eh
+   56 00:0000 -  -  -  -  PC_DDR:		.equ 09Fh
+   57 00:0000 -  -  -  -  PC_ALT1:	.equ 0A0h
+   58 00:0000 -  -  -  -  PC_ALT2:	.equ 0A1h
+   59 00:0000 -  -  -  -  PD_DR:		.equ 0A2h
+   60 00:0000 -  -  -  -  PD_DDR:		.equ 0A3h
+   61 00:0000 -  -  -  -  PD_ALT1:	.equ 0A4h
+   62 00:0000 -  -  -  -  PD_ALT2:	.equ 0A5h
+   63 00:0000 -  -  -  -  
+   64 00:0000 -  -  -  -  ;* Chip Select
+   65 00:0000 -  -  -  -  CS0_LBR:	.equ 0A8h
+   66 00:0000 -  -  -  -  CS0_UBR:	.equ 0A9h
+   67 00:0000 -  -  -  -  CS0_CTL:	.equ 0AAh
+   68 00:0000 -  -  -  -  CS1_LBR:	.equ 0ABh
+   69 00:0000 -  -  -  -  CS1_UBR:	.equ 0ACh
+   70 00:0000 -  -  -  -  CS1_CTL:	.equ 0ADh
+   71 00:0000 -  -  -  -  CS2_LBR:	.equ 0AEh
+   72 00:0000 -  -  -  -  CS2_UBR:	.equ 0AFh
+   73 00:0000 -  -  -  -  CS2_CTL:	.equ 0B0h
+   74 00:0000 -  -  -  -  CS3_LBR:	.equ 0B1h
+   75 00:0000 -  -  -  -  CS3_UBR:	.equ 0B2h
+   76 00:0000 -  -  -  -  CS3_CTL:	.equ 0B3h
+   77 00:0000 -  -  -  -  
+   78 00:0000 -  -  -  -  ;* RAMCTL Registers
+   79 00:0000 -  -  -  -  RAM_CTL0:	.equ 0B4h
+   80 00:0000 -  -  -  -  RAM_CTL:	.equ 0B4h
+   81 00:0000 -  -  -  -  RAM_ADDR_U:	.equ 0B5h
+   82 00:0000 -  -  -  -  
+   83 00:0000 -  -  -  -  ;* SPI Registers
+   84 00:0000 -  -  -  -  
+   85 00:0000 -  -  -  -  SPI_BRG_L:	.equ 0B8h
+   86 00:0000 -  -  -  -  SPI_BRG_H:	.equ 0B9h
+   87 00:0000 -  -  -  -  SPI_CTL:	.equ 0BAh
+   88 00:0000 -  -  -  -  SPI_SR:		.equ 0BBh
+   89 00:0000 -  -  -  -  SPI_RBR:	.equ 0BCh
+   90 00:0000 -  -  -  -  SPI_TSR:	.equ 0BCh
+   91 00:0000 -  -  -  -  
+   92 00:0000 -  -  -  -  ;* UART0 Registers
+   93 00:0000 -  -  -  -  
+   94 00:0000 -  -  -  -  UART0_RBR:	.equ 0C0h
+   95 00:0000 -  -  -  -  UART0_THR:	.equ 0C0h
+   96 00:0000 -  -  -  -  UART0_BRG_L:	.equ 0C0h
+   97 00:0000 -  -  -  -  UART0_IER:	.equ 0C1h
+   98 00:0000 -  -  -  -  UART0_BRG_H:	.equ 0C1h
+   99 00:0000 -  -  -  -  UART0_IIR:	.equ 0C2h
+  100 00:0000 -  -  -  -  UART0_FCTL:	.equ 0C2h
+  101 00:0000 -  -  -  -  UART0_LCTL:	.equ 0C3h
+  102 00:0000 -  -  -  -  UART0_MCTL:	.equ 0C4h
+  103 00:0000 -  -  -  -  UART0_LSR:	.equ 0C5h
+  104 00:0000 -  -  -  -  UART0_MSR:	.equ 0C6h
+  105 00:0000 -  -  -  -  UART0_SPR:	.equ 0C7h
+  106 00:0000 -  -  -  -  
+  107 00:0000 -  -  -  -  ;* I2C Registers
+  108 00:0000 -  -  -  -  
+  109 00:0000 -  -  -  -  I2C_SAR:	.equ 0C8h
+  110 00:0000 -  -  -  -  I2C_XSAR:	.equ 0C9h
+  111 00:0000 -  -  -  -  I2C_DR:		.equ 0CAh
+  112 00:0000 -  -  -  -  I2C_CTL:	.equ 0CBh
+  113 00:0000 -  -  -  -  I2C_SR:		.equ 0CCh
+  114 00:0000 -  -  -  -  I2C_CCR:	.equ 0CCh
+  115 00:0000 -  -  -  -  I2C_SRR:	.equ 0CDh
+  116 00:0000 -  -  -  -  
+  117 00:0000 -  -  -  -  ;* UART1 Registers
+  118 00:0000 -  -  -  -  
+  119 00:0000 -  -  -  -  UART1_RBR:	.equ 0D0h
+  120 00:0000 -  -  -  -  UART1_THR:	.equ 0D0h
+  121 00:0000 -  -  -  -  UART1_BRG_L:	.equ 0D0h
+  122 00:0000 -  -  -  -  UART1_IER:	.equ 0D1h
+  123 00:0000 -  -  -  -  UART1_BRG_H:	.equ 0D1h
+  124 00:0000 -  -  -  -  UART1_IIR:	.equ 0D2h
+  125 00:0000 -  -  -  -  UART1_FCTL:	.equ 0D2h
+  126 00:0000 -  -  -  -  UART1_LCTL:	.equ 0D3h
+  127 00:0000 -  -  -  -  UART1_MCTL:	.equ 0D4h
+  128 00:0000 -  -  -  -  UART1_LSR:	.equ 0D5h
+  129 00:0000 -  -  -  -  UART1_MSR:	.equ 0D6h
+  130 00:0000 -  -  -  -  UART1_SPR:	.equ 0D7h
+  131 00:0000 -  -  -  -  
+  132 00:0000 -  -  -  -  ;* IR Registers
+  133 00:0000 -  -  -  -  
+  134 00:0000 -  -  -  -  IR_CTL:		.equ   0BFh
+  135 00:0000 -  -  -  -  
+  136 00:0000 -  -  -  -  ;* CLK Registers
+  137 00:0000 -  -  -  -  
+  138 00:0000 -  -  -  -  CLK_PPD1:	.equ   0DBh
+  139 00:0000 -  -  -  -  CLK_PPD2:	.equ   0DCh
+  140 00:0000 -  -  -  -  
+  141 00:0000 -  -  -  -  ;* RTC Registers
+  142 00:0000 -  -  -  -  
+  143 00:0000 -  -  -  -  RTC_SEC:	.equ 0E0h
+  144 00:0000 -  -  -  -  RTC_MIN:	.equ 0E1h
+  145 00:0000 -  -  -  -  RTC_HRS:	.equ 0E2h
+  146 00:0000 -  -  -  -  RTC_DOW:	.equ 0E3h
+  147 00:0000 -  -  -  -  RTC_DOM:	.equ 0E4h
+  148 00:0000 -  -  -  -  RTC_MON:	.equ 0E5h
+  149 00:0000 -  -  -  -  RTC_YR:		.equ 0E6h
+  150 00:0000 -  -  -  -  RTC_CEN:	.equ 0E7h
+  151 00:0000 -  -  -  -  RTC_ASEC:	.equ 0E8h
+  152 00:0000 -  -  -  -  RTC_AMIN:	.equ 0E9h
+  153 00:0000 -  -  -  -  RTC_AHRS:	.equ 0EAh
+  154 00:0000 -  -  -  -  RTC_ADOW:	.equ 0EBh
+  155 00:0000 -  -  -  -  RTC_ACTRL:	.equ 0ECh
+  156 00:0000 -  -  -  -  RTC_CTRL:	.equ 0EDh
+  157 00:0000 -  -  -  -  
+  158 00:0000 -  -  -  -  ;* CSBMC Registers
+  159 00:0000 -  -  -  -  
+  160 00:0000 -  -  -  -  CS0_BMC:	.equ 0F0h
+  161 00:0000 -  -  -  -  CS1_BMC:	.equ 0F1h
+  162 00:0000 -  -  -  -  CS2_BMC:	.equ 0F2h
+  163 00:0000 -  -  -  -  CS3_BMC:	.equ 0F3h
+  164 00:0000 -  -  -  -  
+  165 00:0000 -  -  -  -  ;* FLASH Registers
+  166 00:0000 -  -  -  -  
+  167 00:0000 -  -  -  -  FLASH_KEY:	.equ 0F5h
+  168 00:0000 -  -  -  -  FLASH_DATA:	.equ 0F6h
+  169 00:0000 -  -  -  -  FLASH_ADDR_U:	.equ 0F7h
+  170 00:0000 -  -  -  -  FLASH_CTRL:	.equ 0F8h
+  171 00:0000 -  -  -  -  FLASH_FDIV:	.equ 0F9h
+  172 00:0000 -  -  -  -  FLASH_PROT:	.equ 0FAh
+  173 00:0000 -  -  -  -  FLASH_IRQ:	.equ 0FBh
+  174 00:0000 -  -  -  -  FLASH_PAGE:	.equ 0FCh
+  175 00:0000 -  -  -  -  FLASH_ROW:	.equ 0FDh
+  176 00:0000 -  -  -  -  FLASH_COL:	.equ 0FEh
+  177 00:0000 -  -  -  -  FLASH_PGCTL:	.equ 0FFh
+  178 00:0000 -  -  -  -  
+  179 00:0000 -  -  -  -  ;* End eZ80F92 inc file 
+Listing for file "main.asm"
+    2 00:0000 -  -  -  -  
+    3 00:0000 -  -  -  -          .ASSUME	ADL = 1
+    4 00:0000 -  -  -  -          .org 40000h
+    5 04:0000 -  -  -  -  
+    6 04:0000 -  -  -  -  _start_of_jumptable:
+    7 04:0000 C3 45 00 04         jp _mos_init
+    8 04:0004 -  -  -  -  _end_of_jumptable:
+    9 04:0004 00 00 00 00 
+              00 00 00 00 
+              00 00 00 00 
+              00 00 00 00 
+              00 00 00 00 
+              00 00 00 00 
+              00 00 00 00 
+              00 00 00 00 
+              00 00 00 00 
+              00 00 00 00 
+              00 00 00 00 
+              00 00 00 00 
+              00 00 00 00 
+              00 00 00 00 
+              00 00 00 00         .fill 64-(_end_of_jumptable-_start_of_jumptable)
+   10 04:0040 4D 4F 53 -          .DB	"MOS"				; Flag for MOS - to confirm this is a valid MOS command
+   11 04:0043 00 -  -  -  		.DB	00h				; MOS header version 0
+   12 04:0044 01 -  -  -  		.DB	01h				; Flag for run mode (0: Z80, 1: ADL)
+   13 04:0045 -  -  -  -  
+   14 04:0045 -  -  -  -  _mos_init:  
+   15 04:0045 F5 -  -  -          PUSH	AF			; Preserve registers
+   16 04:0046 C5 -  -  -          PUSH	BC
+   17 04:0047 D5 -  -  -          PUSH	DE
+   18 04:0048 DD E5 -  -          PUSH	IX
+   19 04:004A FD E5 -  -          PUSH	IY			; Need to preserve IY for MOS			
+   20 04:004C -  -  -  -  
+   21 04:004C ED 6E -  -          LD	A, MB			; Save MB
+   22 04:004E F5 -  -  -          PUSH 	AF
+   23 04:004F AF -  -  -          XOR 	A
+   24 04:0050 ED 6D -  -          LD 	MB, A                   ; Clear to zero so MOS API calls know how to use 24-bit addresses.
+   25 04:0052 -  -  -  -  
+   26 04:0052 CD 61 00 04         call    _main
+   27 04:0056 -  -  -  -  
+   28 04:0056 F1 -  -  -          POP AF
+   29 04:0057 ED 6D -  -          LD	MB, A
+   30 04:0059 -  -  -  -  
+   31 04:0059 FD E1 -  -          POP	IY			; Restore registers
+   32 04:005B DD E1 -  -          POP	IX
+   33 04:005D D1 -  -  -          POP	DE
+   34 04:005E C1 -  -  -          POP 	BC
+   35 04:005F F1 -  -  -          POP	AF
+   36 04:0060 C9 -  -  -          RET
+   37 04:0061 -  -  -  -  
+   38 04:0061 -  -  -  -  _main:
+   39 04:0061 F3 -  -  -          DI      ; disable interrupts
+   40 04:0062 -  -  -  -  
+   41 04:0062 CD F9 00 04         call UART0_INIT
+   42 04:0066 -  -  -  -          
+   43 04:0066 21 16 03 04         LD	HL, s_WELCOME
+   44 04:006A CD 7F 02 04         CALL	PRINT
+   45 04:006E -  -  -  -  
+   46 04:006E -  -  -  -          ; check CRC of buffer holding to be flashed program
+   47 04:006E DD 2A 02 10 
+              04 -  -  -          LD IX,(SRC_ADDR)
+   48 04:0073 -  -  -  -          ; calculate CRC32, placed in (CRC)
+   49 04:0073 CD 8C 02 04         call crc32_calc
+   50 04:0077 -  -  -  -          ; compare to value in (CRC_TEST)
+   51 04:0077 CD FC 02 04         call crc32_compare
+   52 04:007B 38 31 -  -          jr c, crc_src_error
+   53 04:007D 21 6D 03 04         ld hl, s_CRC_SRC_OKAY
+   54 04:0081 CD 7F 02 04         call PRINT
+   55 04:0085 -  -  -  -  
+   56 04:0085 -  -  -  -          ; flash
+   57 04:0085 21 36 03 04         ld      HL, s_FLASHING
+   58 04:0089 CD 7F 02 04         call    PRINT
+   59 04:008D CD 6C 01 04         CALL    FLASH
+   60 04:0091 -  -  -  -  
+   61 04:0091 -  -  -  -          ; check CRC upper 64kb bank of ROM
+   62 04:0091 DD 2A 05 10 
+              04 -  -  -          LD IX,(DEST_ADDR)
+   63 04:0096 -  -  -  -          ; calculate CRC32, placed in (CRC)
+   64 04:0096 CD 8C 02 04         call crc32_calc
+   65 04:009A -  -  -  -          ; compare to value in (CRC_TEST)
+   66 04:009A CD FC 02 04         call crc32_compare
+   67 04:009E 38 1C -  -          jr c, crc_dst_error
+   68 04:00A0 21 86 03 04         ld hl, s_CRC_DST_OKAY
+   69 04:00A4 CD 7F 02 04         call PRINT
+   70 04:00A8 -  -  -  -  
+   71 04:00A8 -  -  -  -          ; return value
+   72 04:00A8 21 00 00 00         LD	HL, 0
+   73 04:00AC FB -  -  -          EI      ; enable interrupts
+   74 04:00AD C9 -  -  -          RET
+   75 04:00AE -  -  -  -  
+   76 04:00AE -  -  -  -  crc_src_error:
+   77 04:00AE 21 44 03 04         ld hl, s_CRC_SRC_ERROR
+   78 04:00B2 CD 7F 02 04         call PRINT
+   79 04:00B6 21 00 00 00         ld hl,0
+   80 04:00BA FB -  -  -          EI      ; enable interrupts
+   81 04:00BB C9 -  -  -          RET
+   82 04:00BC -  -  -  -  crc_dst_error:
+   83 04:00BC 21 59 03 04         ld hl, s_CRC_DST_ERROR
+   84 04:00C0 CD 7F 02 04         call PRINT
+   85 04:00C4 21 00 00 00         ld hl,0
+   86 04:00C8 FB -  -  -          EI      ; enable interrupts
+   87 04:00C9 C9 -  -  -          RET        
+   88 04:00CA -  -  -  -  
+   89 04:00CA -  -  -  -  
+   90 04:00CA -  -  -  -          #include "includes/ez80.inc"
+Listing for file "/Users/mario/Development/AgonLight/software/AgonElectronFlash/includes/ez80.inc"
+    1 04:00CA -  -  -  -  
+    2 04:00CA -  -  -  -  EZ80_INIT:
+    3 04:00CA F3 -  -  -      di
+    4 04:00CB ED 7E -  -      rsmix
+    5 04:00CD -  -  -  -      ; flash upper address 00
+    6 04:00CD 3E 00 -  -      ld      a,$00
+    7 04:00CF ED 39 F7 -      out0    (FLASH_ADDR_U),a
+    8 04:00D2 -  -  -  -      ; flash enable
+    9 04:00D2 3E 28 -  -      ld      a,00101000b ; flash enabled, 1 wait state
+   10 04:00D4 ED 39 F8 -      out0    (FLASH_CTRL),a
+   11 04:00D7 -  -  -  -      ; configure internal RAM chip-select range
+   12 04:00D7 3E BC -  -      ld a, 0bch      ; bc0000h
+   13 04:00D9 ED 39 B5 -      out0 (RAM_ADDR_U),a
+   14 04:00DC 3E 80 -  -      ld a, 080h      ; enable
+   15 04:00DE ED 39 B4 -      out0 (RAM_CTL),a
+   16 04:00E1 -  -  -  -      ; configure RAM chip-select range
+   17 04:00E1 3E 04 -  -      ld a, 04h
+   18 04:00E3 ED 39 A8 -      out0 (CS0_LBR), a
+   19 04:00E6 3E 0B -  -      ld a, 0bh
+   20 04:00E8 ED 39 A9 -      out0 (CS0_UBR), a
+   21 04:00EB 3E 01 -  -      ld a, 001h  ; 1 wait-state, ez80 mode
+   22 04:00ED ED 39 F0 -      out0 (CS0_BMC), a
+   23 04:00F0 3E 08 -  -      ld a, 008h  ; memory chip select, cs0 enabled
+   24 04:00F2 ED 39 AA -      out0 (CS0_CTL), a
+   25 04:00F5 -  -  -  -  
+   26 04:00F5 -  -  -  -      ; setup Stack Pointer
+   27 04:00F5 31 FF FF 0B     ld sp, 0bffffh
+   28 04:00F9 -  -  -  -  
+Listing for file "main.asm"
+   91 04:00F9 -  -  -  -          #include "includes/uart.inc"
+Listing for file "/Users/mario/Development/AgonLight/software/AgonElectronFlash/includes/uart.inc"
+    1 04:00F9 -  -  -  -  
+    2 04:00F9 -  -  -  -  PORTD_DRVAL_DEF       .equ    0ffh			;The default value for Port D data register (set for Mode 2).
+    3 04:00F9 -  -  -  -  PORTD_DDRVAL_DEF      .equ    0ffh			;The default value for Port D data direction register (set for Mode 2).
+    4 04:00F9 -  -  -  -  PORTD_ALT0VAL_DEF     .equ    0ffh			;The default value for Port D alternate register-0 (clear interrupts).
+    5 04:00F9 -  -  -  -  PORTD_ALT1VAL_DEF     .equ    000h			;The default value for Port D alternate register-1 (set for Mode 2).
+    6 04:00F9 -  -  -  -  PORTD_ALT2VAL_DEF     .equ    000h			;The default value for Port D alternate register-2 (set for Mode 2).
+    7 04:00F9 -  -  -  -  
+    8 04:00F9 -  -  -  -  ; baudrate divisors
+    9 04:00F9 -  -  -  -  ; 20000000 / 16*1152000 = 1,085069444444444
+   10 04:00F9 -  -  -  -  BRD_LOW                .equ    001h
+   11 04:00F9 -  -  -  -  BRD_HIGH               .equ    000h
+   12 04:00F9 -  -  -  -  
+   13 04:00F9 -  -  -  -  UART0_INIT:
+   14 04:00F9 -  -  -  -      ; all pins to GPIO mode 2, high impedance input
+   15 04:00F9 3E FF -  -      ld a, PORTD_DRVAL_DEF
+   16 04:00FB ED 39 A2 -      out0 (PD_DR),a
+   17 04:00FE 3E FF -  -      ld a, PORTD_DDRVAL_DEF
+   18 04:0100 ED 39 A3 -      out0 (PD_DDR),a
+   19 04:0103 3E 00 -  -      ld a, PORTD_ALT1VAL_DEF
+   20 04:0105 ED 39 A4 -      out0 (PD_ALT1),a
+   21 04:0108 3E 00 -  -      ld a, PORTD_ALT2VAL_DEF
+   22 04:010A ED 39 A5 -      out0 (PD_ALT2),a
+   23 04:010D -  -  -  -  
+   24 04:010D -  -  -  -      ; initialize for correct operation
+   25 04:010D -  -  -  -      ; pin 0 and 1 to alternate function
+   26 04:010D -  -  -  -      ; set pin 3 (CTS) to high-impedance input
+   27 04:010D ED 38 A3 -      in0 a,(PD_DDR)
+   28 04:0110 F6 0B -  -      or  00001011b; set pin 0,1,3
+   29 04:0112 ED 39 A3 -      out0 (PD_DDR), a
+   30 04:0115 ED 38 A4 -      in0 a,(PD_ALT1)
+   31 04:0118 E6 F4 -  -      and 11110100b; reset pin 0,1,3
+   32 04:011A ED 39 A4 -      out0 (PD_ALT1), a
+   33 04:011D ED 38 A5 -      in0 a,(PD_ALT2)
+   34 04:0120 E6 F7 -  -      and 11110111b; reset pin 3
+   35 04:0122 F6 03 -  -      or  00000011b; set pin 0,1
+   36 04:0124 ED 39 A5 -      out0 (PD_ALT2), a
+   37 04:0127 -  -  -  -      
+   38 04:0127 ED 38 C3 -      in0 a,(UART0_LCTL)
+   39 04:012A F6 80 -  -      or 10000000b ; set UART_LCTL_DLAB
+   40 04:012C ED 39 C3 -      out0 (UART0_LCTL),a
+   41 04:012F 3E 01 -  -      ld a, BRD_LOW ;// Load divisor low
+   42 04:0131 ED 39 C0 -      out0 (UART0_BRG_L),a
+   43 04:0134 3E 00 -  -      ld a, BRD_HIGH ;// Load divisor high
+   44 04:0136 ED 39 C1 -      out0 (UART0_BRG_H),a
+   45 04:0139 ED 38 C3 -      in0 a,(UART0_LCTL)
+   46 04:013C E6 7F -  -      and 01111111b ; reset UART_LCTL_DLAB
+   47 04:013E ED 39 C3 -      out0 (UART0_LCTL),a
+   48 04:0141 3E 00 -  -      ld a, 000h  ; reset modem control register
+   49 04:0143 ED 39 C4 -      out0 (UART0_MCTL),a
+   50 04:0146 3E 07 -  -      ld a, 007h  ; enable and clear hardware fifo's
+   51 04:0148 ED 39 C2 -      out0 (UART0_FCTL),a
+   52 04:014B 3E 00 -  -      ld a, 000h  ; no interrupts
+   53 04:014D ED 39 C1 -      out0 (UART0_IER),a
+   54 04:0150 ED 38 C3 -      in0 a, (UART0_LCTL)
+   55 04:0153 F6 03 -  -      or  00000011b    ; 8 databits, 1 stopbit
+   56 04:0155 E6 F7 -  -      and 11110111b    ; no parity
+   57 04:0157 ED 39 C3 -      out0 (UART0_LCTL),a
+   58 04:015A -  -  -  -  
+   59 04:015A C9 -  -  -      RET
+Listing for file "main.asm"
+   92 04:015B -  -  -  -          #include "includes/flash.inc"
+Listing for file "/Users/mario/Development/AgonLight/software/AgonElectronFlash/includes/flash.inc"
+    1 04:015B -  -  -  -  ; On-Chip Flash Memory Control
+    2 04:015B -  -  -  -  
+    3 04:015B -  -  -  -  
+    4 04:015B -  -  -  -  _enableFlashKeyRegister:
+    5 04:015B -  -  -  -  	; actual work here
+    6 04:015B 3E B6 -  -  	ld	a, 0b6h			; unlock
+    7 04:015D ED 39 F5 -  	out0	(FLASH_KEY), a
+    8 04:0160 3E 49 -  -  	ld	a, 049h
+    9 04:0162 ED 39 F5 -  	out0	(FLASH_KEY), a
+   10 04:0165 C9 -  -  -  	ret
+   11 04:0166 -  -  -  -  
+   12 04:0166 -  -  -  -  _lockFlashKeyRegister:
+   13 04:0166 -  -  -  -  	; actual work here
+   14 04:0166 3E FF -  -  	ld	a, 0ffh			; lock
+   15 04:0168 ED 39 F5 -  	out0	(FLASH_KEY), a
+   16 04:016B C9 -  -  -  	ret
+   17 04:016C -  -  -  -  
+   18 04:016C -  -  -  -  FLASH:
+   19 04:016C 21 D3 01 04         ld hl, s_UNLOCK_PROTECTION
+   20 04:0170 CD 7F 02 04         call PRINT
+   21 04:0174 -  -  -  -          ;
+   22 04:0174 CD 5B 01 04         call _enableFlashKeyRegister    ; unlock Flash Key Register, so we can write to the Flash Write/Erase protection registers
+   23 04:0178 3E 00 -  -          ld a, 00000000b                 ; remove protection from all pages
+   24 04:017A ED 39 FA -          out0 (FLASH_PROT),a		; disable protection on block 00000 - 1ffff
+   25 04:017D -  -  -  -  
+   26 04:017D CD 5B 01 04         call _enableFlashKeyRegister    ; will need to unlock again after previous write to the flash protection register
+   27 04:0181 3E 5F -  -          ld a, 05fh                      ; Ceiling(18Mhz * 5,1us) = 95, or 5F
+   28 04:0183 ED 39 F9 -          out0 (FLASH_FDIV),a			    
+   29 04:0186 -  -  -  -  			
+   30 04:0186 -  -  -  -          ; erase first 1k page at upper blocks
+   31 04:0186 21 E9 01 04         ld hl, s_ERASE_FLASH
+   32 04:018A CD 7F 02 04         call PRINT
+   33 04:018E -  -  -  -          ;
+   34 04:018E 3A 00 10 04         ld a, (NR_PAGES)
+   35 04:0192 47 -  -  -          ld b, a
+   36 04:0193 3A 01 10 04         ld a, (START_PAGE)      ; page 00h = adress 00000h
+   37 04:0197 4F -  -  -          ld c, a
+   38 04:0198 16 00 -  -          ld d, 0
+   39 04:019A -  -  -  -  FLASH_ERASE_LOOP:        
+   40 04:019A 7A -  -  -          ld a, d                 ; page counter
+   41 04:019B 81 -  -  -          add a,c                 ; add start page
+   42 04:019C ED 39 FC -          out0 (FLASH_PAGE), a    ; set in page register
+   43 04:019F 3E 02 -  -          ld a, 00000010b         ; page erase enable
+   44 04:01A1 ED 39 FF -          out0 (FLASH_PGCTL), a   ; start erasing
+   45 04:01A4 -  -  -  -  FLASH_WAIT:
+   46 04:01A4 ED 38 FF -          in0 a, (FLASH_PGCTL)    ; check page erase bit
+   47 04:01A7 E6 02 -  -          and 00000010b
+   48 04:01A9 20 F9 -  -          jr nz, FLASH_WAIT       ; already 0?
+   49 04:01AB -  -  -  -          ;
+   50 04:01AB 14 -  -  -          inc d
+   51 04:01AC 10 EC -  -          djnz FLASH_ERASE_LOOP
+   52 04:01AE -  -  -  -  
+   53 04:01AE -  -  -  -          ; start flashing by writing new contents into memory
+   54 04:01AE -  -  -  -          ; could also be an ldir
+   55 04:01AE 21 F9 01 04         ld hl, s_WRITE_FLASH
+   56 04:01B2 CD 7F 02 04         call PRINT
+   57 04:01B6 -  -  -  -          ;
+   58 04:01B6 2A 02 10 04         ld hl, (SRC_ADDR)
+   59 04:01BA ED 5B 05 10 
+              04 -  -  -          ld de, (DEST_ADDR)
+   60 04:01BF ED 4B 08 10 
+              04 -  -  -          ld bc, (LENGTH)
+   61 04:01C4 ED B0 -  -          ldir
+   62 04:01C6 -  -  -  -          ; lock protection
+   63 04:01C6 CD 66 01 04         call _lockFlashKeyRegister
+   64 04:01CA -  -  -  -          ;
+   65 04:01CA 21 09 02 04         ld hl, s_LOCK_PROTECTION
+   66 04:01CE CD 7F 02 04         call PRINT
+   67 04:01D2 C9 -  -  -          ret
+   68 04:01D3 -  -  -  -  
+   69 04:01D3 2B 55 6E 6C 
+              6F 63 6B 20 
+              70 72 6F 74 
+              65 63 74 69 
+              6F 6E 20 0D 
+              0A 00 -  -  s_UNLOCK_PROTECTION     .db "+Unlock protection \r\n" ,0
+   70 04:01E9 2B 45 72 61 
+              73 65 20 66 
+              6C 61 73 68 
+              20 0D 0A 00 s_ERASE_FLASH           .db "+Erase flash \r\n",0
+   71 04:01F9 2B 57 72 69 
+              74 65 20 66 
+              6C 61 73 68 
+              20 0D 0A 00 s_WRITE_FLASH           .db "+Write flash \r\n",0
+   72 04:0209 2B 4C 6F 63 
+              6B 20 70 72 
+              6F 74 65 63 
+              74 69 6F 6E 
+              20 0D 0A 00 s_LOCK_PROTECTION       .db "+Lock protection \r\n",0
+Listing for file "main.asm"
+   93 04:021D -  -  -  -          #include "includes/print.inc"
+Listing for file "/Users/mario/Development/AgonLight/software/AgonElectronFlash/includes/print.inc"
+    1 04:021D -  -  -  -  
+    2 04:021D -  -  -  -  ;       Subroutine      Print 8-bit hexidecimal number
+    3 04:021D -  -  -  -  ;       Inputs          A - number to be printed - 0ABh
+    4 04:021D -  -  -  -  ;       Outputs         ________________________
+    5 04:021D -  -  -  -  PRINT_HEX:
+    6 04:021D F5 -  -  -          push af
+    7 04:021E C5 -  -  -          push bc
+    8 04:021F D5 -  -  -          push de
+    9 04:0220 CD 32 02 04         call __NUMTOHEX
+   10 04:0224 7A -  -  -          ld a, d
+   11 04:0225 CD 72 02 04         call CHPUT
+   12 04:0229 7B -  -  -          ld a, e
+   13 04:022A CD 72 02 04         call CHPUT
+   14 04:022E D1 -  -  -          pop de
+   15 04:022F C1 -  -  -          pop bc
+   16 04:0230 F1 -  -  -          pop af
+   17 04:0231 C9 -  -  -          ret
+   18 04:0232 -  -  -  -  
+   19 04:0232 -  -  -  -  ;       Subroutine      Convert 8-bit hexidecimal number to ASCII reprentation
+   20 04:0232 -  -  -  -  ;       Inputs          A - number to be printed - 0ABh
+   21 04:0232 -  -  -  -  ;       Outputs         DE - two byte ASCII values - D=65 / 'A' and E=66 / 'B'
+   22 04:0232 -  -  -  -  __NUMTOHEX:
+   23 04:0232 4F -  -  -          ld c, a   ; a = number to convert
+   24 04:0233 CD 3F 02 04         call _NTH1
+   25 04:0237 57 -  -  -          ld d, a
+   26 04:0238 79 -  -  -          ld a, c
+   27 04:0239 CD 43 02 04         call _NTH2
+   28 04:023D 5F -  -  -          ld e, a
+   29 04:023E C9 -  -  -          ret  ; return with hex number in de
+   30 04:023F -  -  -  -  _NTH1:
+   31 04:023F 1F -  -  -          rra
+   32 04:0240 1F -  -  -          rra
+   33 04:0241 1F -  -  -          rra
+   34 04:0242 1F -  -  -          rra
+   35 04:0243 -  -  -  -  _NTH2:
+   36 04:0243 F6 F0 -  -          or 0F0h
+   37 04:0245 27 -  -  -          daa
+   38 04:0246 C6 A0 -  -          add a, 0A0h
+   39 04:0248 CE 40 -  -          adc a, 040h ; Ascii hex at this point (0 to F)   
+   40 04:024A C9 -  -  -          ret
+   41 04:024B -  -  -  -  
+   42 04:024B -  -  -  -  ;       Subroutine      Print a buffer of data in HEX
+   43 04:024B -  -  -  -  ;       Inputs          HL - buffer to be printed
+   44 04:024B -  -  -  -  ;                       BC - number of bytes
+   45 04:024B -  -  -  -  ;       Outputs         ________________________
+   46 04:024B -  -  -  -  PRINTHEX_BUFFER:
+   47 04:024B 16 08 -  -          ld d,8
+   48 04:024D -  -  -  -  _PRINTHEX_LOOP:
+   49 04:024D 7E -  -  -          ld a, (hl)
+   50 04:024E CD 1D 02 04         call PRINT_HEX
+   51 04:0252 3E 20 -  -          ld a, 020h
+   52 04:0254 CD 72 02 04         call CHPUT
+   53 04:0258 23 -  -  -          inc hl
+   54 04:0259 0B -  -  -          dec bc
+   55 04:025A -  -  -  -          ; decrement d and check if zero
+   56 04:025A 15 -  -  -          dec d
+   57 04:025B 7A -  -  -          ld a, d
+   58 04:025C A7 -  -  -          and a
+   59 04:025D 20 0C -  -          jr nz, _PRINTHEX_NEXT
+   60 04:025F E5 -  -  -          push hl
+   61 04:0260 21 89 02 04         ld hl, TXT_NEWLINE
+   62 04:0264 CD 7F 02 04         call PRINT
+   63 04:0268 16 08 -  -          ld d,8
+   64 04:026A E1 -  -  -          pop hl
+   65 04:026B -  -  -  -  
+   66 04:026B -  -  -  -  _PRINTHEX_NEXT:
+   67 04:026B 78 -  -  -          ld a,b
+   68 04:026C B1 -  -  -          or c
+   69 04:026D C2 4D 02 04         jp nz, _PRINTHEX_LOOP
+   70 04:0271 C9 -  -  -          ret
+   71 04:0272 -  -  -  -  
+   72 04:0272 -  -  -  -  ; separate putch function that doesn't rely on a running MOS firmware
+   73 04:0272 -  -  -  -  ; UART0 initialization done by MOS firmware previously
+   74 04:0272 -  -  -  -  ; This utility doesn't run without MOS to load it anyway
+   75 04:0272 -  -  -  -  CHPUT:  
+   76 04:0272 F5 -  -  -          push af
+   77 04:0273 -  -  -  -  chput_uart0_available:
+   78 04:0273 ED 38 C5 -          in0 a, (UART0_LSR)
+   79 04:0276 E6 40 -  -          and 01000000b ; 040h = Transmit holding register/FIFO and transmit shift register are empty
+   80 04:0278 28 F9 -  -          jr z, chput_uart0_available
+   81 04:027A F1 -  -  -          pop af
+   82 04:027B ED 39 C0 -          out0 (UART0_THR),a
+   83 04:027E -  -  -  -          ; RST.LIL 10h
+   84 04:027E C9 -  -  -          RET
+   85 04:027F -  -  -  -  
+   86 04:027F -  -  -  -  ; Print a zero-terminated string
+   87 04:027F -  -  -  -  ;
+   88 04:027F 7E -  -  -  PRINT:	LD	A,(HL)
+   89 04:0280 B7 -  -  -          OR	A
+   90 04:0281 C8 -  -  -          RET	Z
+   91 04:0282 CD 72 02 04         CALL    CHPUT
+   92 04:0286 23 -  -  -          INC	HL
+   93 04:0287 18 F6 -  -          JR	PRINT
+   94 04:0289 -  -  -  -  
+   95 04:0289 -  -  -  -  TXT_NEWLINE:
+   96 04:0289 0D 0A 00 -  		.DB     "\r\n",0
+Listing for file "main.asm"
+   94 04:028C -  -  -  -          #include "includes/crc32.inc"
+Listing for file "/Users/mario/Development/AgonLight/software/AgonElectronFlash/includes/crc32.inc"
+    1 04:028C -  -  -  -  ; Calculating ZIP CRC-32 in Z80
+    2 04:028C -  -  -  -  ; =============================
+    3 04:028C -  -  -  -  ;
+    4 04:028C -  -  -  -  ; Calculate a ZIP 32-bit CRC from data in memory. This code is as
+    5 04:028C -  -  -  -  ; tight and as fast as it can be, moving as much code out of inner
+    6 04:028C -  -  -  -  ; loops as possible. Can be made shorter, but slower, by replacing
+    7 04:028C -  -  -  -  ; JP with JR.
+    8 04:028C -  -  -  -  ;
+    9 04:028C -  -  -  -  ; On entry, crc..crc+3   =  incoming CRC
+   10 04:028C -  -  -  -  ;           addr..addr+1 => start address of data
+   11 04:028C -  -  -  -  ;           num..num+1   =  number of bytes
+   12 04:028C -  -  -  -  ; On exit,  crc..crc+3   =  updated CRC
+   13 04:028C -  -  -  -  ;           addr..addr+1 => undefined
+   14 04:028C -  -  -  -  ;           num..num+1   =  undefined
+   15 04:028C -  -  -  -  ;
+   16 04:028C -  -  -  -  ; Multiple passes over data in memory can be made to update the CRC.
+   17 04:028C -  -  -  -  ; For ZIP, initial CRC must be &FFFFFFFF, and the final CRC must
+   18 04:028C -  -  -  -  ; be EORed with &FFFFFFFF before being stored in the ZIP file.
+   19 04:028C -  -  -  -  ; Total 70 bytes. 
+   20 04:028C -  -  -  -  ;
+   21 04:028C -  -  -  -  crc32_calc:
+   22 04:028C DD E5 -  -      push ix
+   23 04:028E DD 21 0B 10 
+              04 -  -  -      ld ix,CRC
+   24 04:0293 DD 36 00 FF     ld (ix+0),0ffh
+   25 04:0297 DD 36 01 FF     ld (ix+1),0ffh
+   26 04:029B DD 36 02 FF     ld (ix+2),0ffh
+   27 04:029F DD 36 03 FF     ld (ix+3),0ffh
+   28 04:02A3 DD E1 -  -      pop ix
+   29 04:02A5 ED 4B 08 10 
+              04 -  -  -      LD BC,(LENGTH)  ;\ Address, Count
+   30 04:02AA ED 5B 0B 10 
+              04 -  -  -      LD DE,(CRC)
+   31 04:02AF 2A 0D 10 04     LD HL,(CRC+2) ;\ Incoming CRC
+   32 04:02B3 -  -  -  -  ;
+   33 04:02B3 -  -  -  -  ; Enter here with IX=addr, BC=num, HLDE=crc
+   34 04:02B3 -  -  -  -  ;
+   35 04:02B3 -  -  -  -  bytelp:
+   36 04:02B3 C5 -  -  -      PUSH BC                   ;\ Save count
+   37 04:02B4 DD 7E 00 -      LD A,(IX)                 ;\ Fetch byte from memory
+   38 04:02B7 -  -  -  -  ; The following code updates the CRC with the byte in A ---------+
+   39 04:02B7 AB -  -  -      XOR E                     ;\ XOR byte into CRC bottom byte       |
+   40 04:02B8 06 08 -  -      LD B,8                    ;\ Prepare to rotate 8 bits            |
+   41 04:02BA -  -  -  -  rotlp:                        ;\                                     |
+   42 04:02BA CB 3C -  -      SRL H                     ;\ Rotate CRC                          |
+   43 04:02BC CB 1D -  -      RR L
+   44 04:02BE CB 1A -  -      RR D
+   45 04:02C0 1F -  -  -      RRA       
+   46 04:02C1 D2 D5 02 04     JP NC,clear               ;\ b0 was zero                         |
+   47 04:02C5 5F -  -  -      LD E,A                    ;\ Put CRC low byte back into E        |
+   48 04:02C6 -  -  -  -      ;
+   49 04:02C6 7C -  -  -      LD A,H                    ;\ CRC=CRC XOR &EDB88320, ZIP polynomic|
+   50 04:02C7 EE ED -  -      XOR 0EDh
+   51 04:02C9 67 -  -  -      LD H,A     
+   52 04:02CA -  -  -  -      ;
+   53 04:02CA 7D -  -  -      LD A,L
+   54 04:02CB EE B8 -  -      XOR 0B8h
+   55 04:02CD 6F -  -  -      LD L,A
+   56 04:02CE -  -  -  -      ;
+   57 04:02CE 7A -  -  -      LD A,D
+   58 04:02CF EE 83 -  -      XOR 083h
+   59 04:02D1 57 -  -  -      LD D,A
+   60 04:02D2 -  -  -  -      ;
+   61 04:02D2 7B -  -  -      LD A,E                    ;\ And get CRC low byte back into A    |
+   62 04:02D3 EE 20 -  -      XOR 020h
+   63 04:02D5 -  -  -  -  clear: 
+   64 04:02D5 05 -  -  -      DEC B
+   65 04:02D6 C2 BA 02 04     JP NZ,rotlp               ;\ Loop for 8 bits                     |
+   66 04:02DA 5F -  -  -      LD E,A                    ;\ Put CRC low byte back into E        |
+   67 04:02DB -  -  -  -  ; ---------------------------------------------------------------+
+   68 04:02DB -  -  -  -  ;
+   69 04:02DB DD 23 -  -      INC IX                    ;\ Step to next byte
+   70 04:02DD C1 -  -  -      POP BC
+   71 04:02DE 0B -  -  -      DEC BC                    ;\ num=num-1
+   72 04:02DF 78 -  -  -      LD A,B
+   73 04:02E0 B1 -  -  -      OR C
+   74 04:02E1 C2 B3 02 04     JP NZ,bytelp              ;\ Loop until num=0
+   75 04:02E5 ED 53 0B 10 
+              04 -  -  -      LD (CRC),DE
+   76 04:02EA 22 0D 10 04     LD (CRC+2),HL             ;\ Store outgoing CRC
+   77 04:02EE -  -  -  -  
+   78 04:02EE 21 0B 10 04     ld hl,CRC
+   79 04:02F2 06 04 -  -      ld b,4
+   80 04:02F4 -  -  -  -  crc32_loop:
+   81 04:02F4 7E -  -  -      ld a, (hl)
+   82 04:02F5 EE FF -  -      xor 0ffh
+   83 04:02F7 77 -  -  -      ld (hl),a
+   84 04:02F8 23 -  -  -      inc hl
+   85 04:02F9 10 F9 -  -      djnz crc32_loop
+   86 04:02FB -  -  -  -  
+   87 04:02FB C9 -  -  -      RET
+   88 04:02FC -  -  -  -  
+   89 04:02FC -  -  -  -  crc32_compare:
+   90 04:02FC -  -  -  -  
+   91 04:02FC 21 0B 10 04         ld hl,CRC
+   92 04:0300 11 0F 10 04         ld de,CRC_TEST
+   93 04:0304 01 04 00 00         ld bc,4
+   94 04:0308 -  -  -  -  loop_crc_test:
+   95 04:0308 1A -  -  -          ld a, (de)
+   96 04:0309 ED A1 -  -          cpi
+   97 04:030B 20 07 -  -          jr nz, crc32_error
+   98 04:030D 13 -  -  -          inc de
+   99 04:030E 79 -  -  -          ld a,c
+  100 04:030F A7 -  -  -          and a
+  101 04:0310 20 F6 -  -          jr nz, loop_crc_test
+  102 04:0312 B7 -  -  -          or a
+  103 04:0313 C9 -  -  -          ret
+  104 04:0314 -  -  -  -  crc32_error:
+  105 04:0314 37 -  -  -          scf
+  106 04:0315 C9 -  -  -          ret
+Listing for file "main.asm"
+   95 04:0316 -  -  -  -  
+   96 04:0316 -  -  -  -  ; Sample text
+   97 04:0316 -  -  -  -  ;
+   98 04:0316 41 67 6F 6E 
+              20 45 6C 65 
+              63 74 72 6F 
+              6E 20 2D 20 
+              66 6C 61 73 
+              68 20 75 74 
+              69 6C 69 74 
+              79 0A 0D 00 s_WELCOME:	.DB 	"Agon Electron - flash utility\n\r", 0
+   99 04:0336 46 6C 61 73 
+              68 69 6E 67 
+              2E 2E 2E 0D 
+              0A 00 -  -  s_FLASHING:     .DB "Flashing...\r\n", 0
+  100 04:0344 43 52 43 20 
+              75 70 6C 6F 
+              61 64 20 65 
+              72 72 6F 72 
+              21 21 0D 0A 
+              00 -  -  -  s_CRC_SRC_ERROR:     .DB "CRC upload error!!\r\n", 0
+  101 04:0359 43 52 43 20 
+              66 6C 61 73 
+              68 20 65 72 
+              72 6F 72 21 
+              21 0D 0A 00 s_CRC_DST_ERROR:     .DB "CRC flash error!!\r\n", 0
+  102 04:036D 43 52 43 20 
+              75 70 6C 6F 
+              61 64 65 64 
+              20 63 6F 64 
+              65 20 6F 6B 
+              61 79 0D 0A 
+              00 -  -  -  s_CRC_SRC_OKAY:     .DB "CRC uploaded code okay\r\n", 0
+  103 04:0386 43 52 43 20 
+              66 6C 61 73 
+              68 65 64 20 
+              63 6F 64 65 
+              20 6F 6B 61 
+              79 0D 0A 00 s_CRC_DST_OKAY:     .DB "CRC flashed code okay\r\n", 0
+  104 04:039E -  -  -  -  
+  105 04:039E -  -  -  -          #include "flash_hdr.asm"
+Listing for file "/Users/mario/Development/AgonLight/software/AgonElectronFlash/flash_hdr.asm"
+    1 04:039E -  -  -  -          .org 41000h
+    2 04:1000 -  -  -  -  
+    3 04:1000 40 -  -  -  NR_PAGES        .DB 040h ; erase all pages from 00000 to 0ffff
+    4 04:1001 00 -  -  -  START_PAGE      .DB 000h
+    5 04:1002 -  -  -  -  
+    6 04:1002 00 -  -  -  SRC_ADDR        .DB 00h     ; L.H.U.
+    7 04:1003 00 -  -  -                  .DB 00h
+    8 04:1004 05 -  -  -                  .DB 05h
+    9 04:1005 00 -  -  -  DEST_ADDR       .DB 00h
+   10 04:1006 00 -  -  -                  .DB 00h
+   11 04:1007 00 -  -  -                  .DB 00h
+   12 04:1008 7E -  -  -  LENGTH          .DB 07eh
+   13 04:1009 C2 -  -  -                  .DB 0c2h
+   14 04:100A 00 -  -  -                  .DB 000h
+   15 04:100B 00 00 00 00 CRC             .DW 0,0
+   16 04:100F 69 D6 3A 8A CRC_TEST        .DB 069h,0d6h,03ah,08ah ;8a3ad669
+Listing for file "main.asm"
