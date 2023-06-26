@@ -2,10 +2,10 @@
 EZ80_INIT:
     di
     rsmix
-    ; flash upper address 00
+    ; embedded flash upper address 00
     ld      a,$00
     out0    (FLASH_ADDR_U),a
-    ; flash enable
+    ; embedded flash enable
     ld      a,00101000b ; flash enabled, 1 wait state
     out0    (FLASH_CTRL),a
     ; configure internal RAM chip-select range

@@ -68,24 +68,19 @@ _main:
         ld hl, s_CRC_DST_OKAY
         call PRINT
 
-        ; return value
-        LD	HL, 0
-        EI      ; enable interrupts
-        RET
+        JP 0
 
 crc_src_error:
         ld hl, s_CRC_SRC_ERROR
         call PRINT
         ld hl,0
-        EI      ; enable interrupts
-        RET
+        JP 0
+
 crc_dst_error:
         ld hl, s_CRC_DST_ERROR
         call PRINT
         ld hl,0
-        EI      ; enable interrupts
-        RET        
-
+        JP 0   
 
         #include "includes/ez80.inc"
         #include "includes/uart.inc"

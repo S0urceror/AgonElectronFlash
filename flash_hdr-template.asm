@@ -10,10 +10,10 @@ DEST_ADDR       .DB 00h
                 .DB 00h
                 .DB 00h
 
-LENGTH          .DW 43578
+LENGTH          .DW FLASH_LEN
                 .DB 000h
 CRC             .DW 0,0
 
-CRC_TEST        .DW 0e18ah
-                .DW 04909h
+CRC_TEST        .DW FLASH_CRC_HIGH
+                .DW FLASH_CRC_LOW
                 
