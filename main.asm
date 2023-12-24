@@ -1,7 +1,7 @@
         #include "includes/ez80f92.inc"
 
         .ASSUME	ADL = 1
-        .org 40000h
+        .org 41000h
 
 _start_of_jumptable:
         jp _mos_init
