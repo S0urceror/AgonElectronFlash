@@ -720,21 +720,21 @@ Listing for file "main.asm"
 Listing for file "/Users/mario/Development/AgonLight/software/AgonElectronFlash/flash_hdr.asm"
     1 04:13A0 -  -  -  -          .org 42000h
     2 04:2000 -  -  -  -  
-    3 04:2000 40 -  -  -  NR_PAGES        .DB 040h ; erase all pages from 00000 to 0ffff
-    4 04:2001 00 -  -  -  START_PAGE      .DB 000h
+    3 04:2000 40 -  -  -  NR_PAGES        .DB 040h 
+    4 04:2001 40 -  -  -  START_PAGE      .DB 040h ; erase all pages from 10000 to 1ffff
     5 04:2002 -  -  -  -  
     6 04:2002 00 -  -  -  SRC_ADDR        .DB 00h     ; L.H.U.
     7 04:2003 00 -  -  -                  .DB 00h
     8 04:2004 05 -  -  -                  .DB 05h
     9 04:2005 00 -  -  -  DEST_ADDR       .DB 00h
    10 04:2006 00 -  -  -                  .DB 00h
-   11 04:2007 00 -  -  -                  .DB 00h
+   11 04:2007 01 -  -  -                  .DB 01h
    12 04:2008 -  -  -  -  
-   13 04:2008 FD CA -  -  LENGTH          .DW 51965
+   13 04:2008 0B B7 -  -  LENGTH          .DW 46859
    14 04:200A 00 -  -  -                  .DB 000h
    15 04:200B 00 00 00 00 CRC             .DW 0,0
    16 04:200F -  -  -  -  
-   17 04:200F 2C 13 -  -  CRC_TEST        .DW 0132ch
-   18 04:2011 11 48 -  -                  .DW 04811h
+   17 04:200F 18 FF -  -  CRC_TEST        .DW 0ff18h
+   18 04:2011 2A 36 -  -                  .DW 0362ah
    19 04:2013 -  -  -  -                  
 Listing for file "main.asm"
